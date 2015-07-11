@@ -2,6 +2,20 @@
 
 
 getXML();
+getText();
+
+
+function getText() {
+  $.ajax({
+    type: 'GET',
+    url: 'app/assets/test.txt',
+    dataType: 'text',
+    success: function(response) {
+      $('body').append(response);
+      // $('body').append('XML category text:' + this.textContent.replace(/(\r\n|\n|\r)/gm,"").trim());
+    }
+  });
+};
 
 
 function getXML() {
