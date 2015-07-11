@@ -5,4 +5,34 @@
       <charseq END="22" START="0">a large rose-tree stood</charseq>
     </extent>
   </span>
+  <span category="LOCATION">
+    <extent>
+      <charseq END="54" START="45">the garden</charseq>
+    </extent>
+  </span>
+  <span category="PERSON">
+    <extent>
+      <charseq END="161" START="157">alice</charseq>
+    </extent>
+  </span>
+  <span category="PERSON">
+    <extent>
+      <charseq END="311" START="307">five!</charseq>
+    </extent>
+  </span>
+  <span category="PERSON">
+    <extent>
+      <charseq END="968" START="964">alice</charseq>
+    </extent>
+  </span>
+  <span category="PERSON">
+    <extent>
+      <charseq END="1120" START="1116">alice</charseq>
+    </extent>
+  </span>
+  <span category="LOCATION">
+    <extent>
+      <charseq END="1585" START="1576">the garden</charseq>
+    </extent>
+  </span>
 </document>
