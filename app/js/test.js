@@ -1,6 +1,3 @@
-
-
-
 getXML();
 getText();
 
@@ -12,7 +9,6 @@ function getText() {
     dataType: 'text',
     success: function(response) {
       $('body').append(response);
-      // $('body').append('XML category text:' + this.textContent.replace(/(\r\n|\n|\r)/gm,"").trim());
     }
   });
 };
@@ -27,8 +23,6 @@ function getXML() {
       $(response).find('span').each(function() {
         xml.doc = response;
         xml.add(this.getAttribute('category'));
-        // $('body').append('XML category:' + this.getAttribute('category'));
-        // $('body').append('XML category text:' + this.textContent.replace(/(\r\n|\n|\r)/gm,"").trim());
       })
       xml.show()
     }
@@ -70,11 +64,5 @@ var xml = {
     return arr.length;
   }
 }
-
-
-
-
-
-//$('body').append('XML category text:' + this.textContent.replace(/(\r\n|\n|\r)/gm,"").trim());
 
 
