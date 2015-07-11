@@ -1,22 +1,31 @@
 
-$.ajax({
-  type: 'GET',
-  url: 'app/assets/test.xml',
-  dataType: 'xml',
-  success: function(response) {
-    $(response).find('span').each(function() {
-      categories.add(this.getAttribute('category'));
-      // $('body').append('XML category:' + this.getAttribute('category'));
-      // $('body').append('XML category text:' + this.textContent.replace(/(\r\n|\n|\r)/gm,"").trim());
-    })
-    categories.show()
-  }
-});
 
-var categories = {
-  values: [],
+
+getXML();
+
+
+function getXML() {
+  $.ajax({
+    type: 'GET',
+    url: 'app/assets/test.xml',
+    dataType: 'xml',
+    success: function(response) {
+      $(response).find('span').each(function() {
+        xml.doc = response;
+        xml.add(this.getAttribute('category'));
+        // $('body').append('XML category:' + this.getAttribute('category'));
+        // $('body').append('XML category text:' + this.textContent.replace(/(\r\n|\n|\r)/gm,"").trim());
+      })
+      xml.show()
+    }
+  });
+};
+
+var xml = {
+  categories: [],
+  doc: '',
   add: function(category) {
-    this.values.push(category);
+    this.categories.push(category);
   },
   filter: function(arr) {
     var sortedArray = [], prev;
@@ -31,7 +40,7 @@ var categories = {
   },
   show: function() {
     that = this;
-    filtered_array = this.filter(this.values);
+    filtered_array = this.filter(this.categories);
     $(filtered_array).each(function() {
       $('thead tr').append('<th>' + this + '</th>');
       $('tbody tr').append('<td>' + that.count(that, this) + '</td>');
@@ -39,7 +48,7 @@ var categories = {
   },
   count: function(obj, category) {
     arr = [];
-    $(obj.values).each(function() {
+    $(obj.categories).each(function() {
       if (this == category.toString()) {
         arr.push(this)
       }
@@ -47,6 +56,8 @@ var categories = {
     return arr.length;
   }
 }
+
+
 
 
 
