@@ -4,7 +4,8 @@ function getText() {
     url: 'app/assets/test.txt',
     dataType: 'text',
     success: function(response) {
-      $('body').append(response);
+      text.doc = response;
+      text.show();
     }
   });
 };
