@@ -10,7 +10,7 @@ function filter(arr) {
   return filteredArray
 }
 
-function rarefy(pattern) {
+function rarefyXMLTextContent(pattern) {
   arr = [];
   matches = [];
   merged = [];
@@ -24,7 +24,7 @@ function rarefy(pattern) {
 }
 
 function countMatches(pattern) {
-  filteredArray = rarefy(pattern);
+  filteredArray = rarefyXMLTextContent(pattern);
   for (var i = 0; i < filteredArray.length; i++) {
     pattern = filteredArray[i];
     regex = new RegExp(pattern, 'gi');
