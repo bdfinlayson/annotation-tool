@@ -23,7 +23,8 @@ function rarefy(pattern) {
   return filteredArray
 }
 
-function match(filteredArray) {
+function countMatches(pattern) {
+  filteredArray = rarefy(pattern);
   for (var i = 0; i < filteredArray.length; i++) {
     pattern = filteredArray[i];
     regex = new RegExp(pattern, 'gi');
@@ -32,6 +33,6 @@ function match(filteredArray) {
     }
   }
   merged = merged.concat.apply(merged, matches); // For unnesting nested arrays
-  return merged;
+  return merged.length;
 }
 

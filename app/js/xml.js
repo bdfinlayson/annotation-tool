@@ -13,11 +13,7 @@ var xml = {
     this.categories = filteredArray;
     $(filteredArray).each(function() {
       $('thead tr').append('<th>' + this + '</th>');
-      $('tbody tr').append('<td>' + that.matchCount(this) + '</td>');
+      $('tbody tr').append('<td>' + countMatches(this) + '</td>');
     });
   },
-  matchCount: function(category) {
-    filteredArray = rarefy(category)
-    return match(filteredArray).length;
-  }
 }
