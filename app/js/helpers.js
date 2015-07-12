@@ -37,7 +37,13 @@ function countMatches(pattern) {
 }
 
 function highlight() {
-  var newDoc = text.doc.replace(/roses/, '<span class="PERSON">WINE</span>');
-  text.doc = newDoc;
+  for (category in xml.categories) {
+    var strings = rarefyXMLTextContent(xml.categories[category])
+    for (string in strings) {
+      var pattern = new RegExp(strings[string])
+      var newDoc = text.doc.replace(pattern, '<span class=' + xml.categories[category] + '>' + strings[string] + '</span>');
+      text.doc = newDoc;
+    }
+  }
 }
 
