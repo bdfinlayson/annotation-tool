@@ -12,8 +12,7 @@ function getText() {
 
 
 function getXML() {
-    cb = '';
-    $.ajax({
+  $.ajax({
     type: 'GET',
     url: 'app/assets/test.xml',
     dataType: 'xml',

@@ -1,0 +1,37 @@
+function filter(arr) {
+  var filteredArray = [], prev;
+  arr.sort();
+  for (var i = 0; i < arr.length; i++) {
+    if (arr[i] !== prev) {
+      filteredArray.push(arr[i]);
+    }
+    prev = arr[i];
+  }
+  return filteredArray
+}
+
+function rarefy(pattern) {
+  arr = [];
+  matches = [];
+  merged = [];
+  str = text.doc;
+  elements = xml.doc.querySelectorAll("[category=" + pattern + "]")
+  for (var i = 0; i < elements.length; i++) {
+    arr.push(elements[i].textContent.replace(/(\r\n|\n|\r)/gm,"").trim());
+  }
+  filteredArray = filter(arr);
+  return filteredArray
+}
+
+function match(filteredArray) {
+  for (var i = 0; i < filteredArray.length; i++) {
+    pattern = filteredArray[i];
+    regex = new RegExp(pattern, 'gi');
+    if (str.match(regex)) {
+      matches.push(str.match(regex));
+    }
+  }
+  merged = merged.concat.apply(merged, matches); // For unnesting nested arrays
+  return merged;
+}
+
