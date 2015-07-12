@@ -1,2 +1,5 @@
-getText();
-getXML();
+(function() {
+  getText();
+  getXML();
+})();
+

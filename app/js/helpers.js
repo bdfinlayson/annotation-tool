@@ -36,3 +36,8 @@ function countMatches(pattern) {
   return merged.length;
 }
 
+function highlight() {
+  var newDoc = text.doc.replace(/roses/, '<span class="PERSON">WINE</span>');
+  text.doc = newDoc;
+}
+

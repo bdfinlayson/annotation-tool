@@ -5,7 +5,6 @@ function getText() {
     dataType: 'text',
     success: function(response) {
       text.doc = response;
-      text.show();
     }
   });
 };
@@ -20,6 +19,9 @@ function getXML() {
       xml.doc = response;
       xml.add()
       xml.show()
+      highlight();
+      text.show();
     }
   });
 };
+
