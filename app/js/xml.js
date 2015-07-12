@@ -24,10 +24,13 @@ var xml = {
     this.categories = filteredArray;
     $(filteredArray).each(function() {
       $('thead tr').append('<th>' + this + '</th>');
-      $('tbody tr').append('<td>' + that.count(that, this) + '</td>');
+      $('tbody tr').append('<td>' + that.matchCount(this) + '</td>');
     });
   },
-  count: function(obj, category) {
+  matchCount: function(category) {
+    return this.match(category).length;
+  },
+  match: function(category) {
     arr = [];
     matches = [];
     str = text.doc;
@@ -43,6 +46,6 @@ var xml = {
         matches.push(str.match(regex));
       }
     }
-    return matches.length;
+    return matches;
   }
 }
