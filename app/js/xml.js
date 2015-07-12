@@ -1,39 +1,18 @@
-getXML();
-getText();
+      // $(response).find('span').each(function() {
+      //   xml.doc = response;
+      //   xml.add(this.getAttribute('category'));
 
+      // xml.show()
 
-function getText() {
-  $.ajax({
-    type: 'GET',
-    url: 'app/assets/test.txt',
-    dataType: 'text',
-    success: function(response) {
-      $('body').append(response);
-    }
-  });
-};
-
-
-function getXML() {
-  $.ajax({
-    type: 'GET',
-    url: 'app/assets/test.xml',
-    dataType: 'xml',
-    success: function(response) {
-      $(response).find('span').each(function() {
-        xml.doc = response;
-        xml.add(this.getAttribute('category'));
-      })
-      xml.show()
-    }
-  });
-};
 
 var xml = {
   categories: [],
   doc: '',
-  add: function(category) {
-    this.categories.push(category);
+  add: function() {
+    that = this;
+    $(that.doc).find('span').each(function() {
+      that.categories.push(this.getAttribute('category'));
+    });
   },
   filter: function(arr) {
     var sortedArray = [], prev;
@@ -64,5 +43,3 @@ var xml = {
     return arr.length;
   }
 }
-
-
