@@ -38,6 +38,7 @@ function countMatches(pattern) {
 
 function highlight() {
   for (category in xml.categories) {
+    dynamicStyles(xml.categories[category]);
     var strings = rarefyXMLTextContent(xml.categories[category])
     for (string in strings) {
       var pattern = new RegExp(strings[string])
@@ -46,4 +47,26 @@ function highlight() {
     }
   }
 }
+
+function dynamicStyles(category) {
+  var sheet = document.styleSheets[0];
+  var color = randomColor()
+  sheet.insertRule("." + category + " { background-color: " + color + "; }", 1);
+  removeColor(color)
+}
+
+
+function randomColor() {
+  var rand = Math.random();
+  rand *= arr.length;
+  rand = Math.floor(rand);
+  return text.colors[rand];
+}
+
+function removeColor(color) {
+  var index = text.colors.indexOf(color);
+  text.colors.splice(index, 1)
+}
+
+
 
