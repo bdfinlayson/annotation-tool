@@ -23,7 +23,7 @@ function rarefyXMLTextContent(pattern) {
   return filteredArray
 }
 
-function countMatches(pattern) {
+function allMatches(pattern) {
   filteredArray = rarefyXMLTextContent(pattern);
   for (var i = 0; i < filteredArray.length; i++) {
     pattern = filteredArray[i];
@@ -33,7 +33,7 @@ function countMatches(pattern) {
     }
   }
   merged = merged.concat.apply(merged, matches); // For unnesting nested arrays
-  return merged.length;
+  return merged;
 }
 
 function highlight() {
@@ -41,7 +41,7 @@ function highlight() {
     dynamicStyles(xml.categories[category]);
     var strings = rarefyXMLTextContent(xml.categories[category])
     for (string in strings) {
-      var pattern = new RegExp(strings[string])
+      var pattern = new RegExp(strings[string], 'g')
       var newDoc = text.doc.replace(pattern, '<span class=' + xml.categories[category] + '>' + strings[string] + '</span>');
       text.doc = newDoc;
     }

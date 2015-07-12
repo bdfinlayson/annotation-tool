@@ -13,7 +13,7 @@ var xml = {
     this.categories = filteredArray;
     $(filteredArray).each(function() {
       $('thead tr').append('<th>' + this + '</th>');
-      $('tbody tr').append('<td>' + countMatches(this) + '</td>');
+      $('tbody tr').append('<td>' + allMatches(this).length + '</td>');
     });
   },
 }

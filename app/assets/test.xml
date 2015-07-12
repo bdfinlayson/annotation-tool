@@ -15,19 +15,19 @@
       <charseq END="161" START="157">three gardeners</charseq>
     </extent>
   </span>
-  <span category="THING">
+  <span category="ARTICLE">
     <extent>
-      <charseq END="311" START="307">the roses</charseq>
+      <charseq END="311" START="307">the</charseq>
     </extent>
   </span>
-  <span category="THE-WORD-THE">
+  <span category="VERBS">
     <extent>
-      <charseq END="968" START="964">the</charseq>
+      <charseq END="968" START="964">growing</charseq>
     </extent>
   </span>
-  <span category="PERSON">
+  <span category="NOUN">
     <extent>
-      <charseq END="1120" START="1116">alice</charseq>
+      <charseq END="1120" START="1116">entrance</charseq>
     </extent>
   </span>
   <span category="LOCATION">
