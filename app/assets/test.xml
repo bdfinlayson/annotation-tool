@@ -12,12 +12,12 @@
   </span>
   <span category="PERSON">
     <extent>
-      <charseq END="161" START="157">alice</charseq>
+      <charseq END="161" START="157">three gardeners</charseq>
     </extent>
   </span>
-  <span category="PERSON">
+  <span category="THING">
     <extent>
-      <charseq END="311" START="307">five!</charseq>
+      <charseq END="311" START="307">the roses</charseq>
     </extent>
   </span>
   <span category="PERSON">

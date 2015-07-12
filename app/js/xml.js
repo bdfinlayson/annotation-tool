@@ -8,31 +8,41 @@ var xml = {
     });
   },
   filter: function(arr) {
-    var sortedArray = [], prev;
+    var filteredArray = [], prev;
     arr.sort();
     for (var i = 0; i < arr.length; i++) {
       if (arr[i] !== prev) {
-        sortedArray.push(arr[i]);
+        filteredArray.push(arr[i]);
       }
       prev = arr[i];
     }
-    return sortedArray
+    return filteredArray
   },
   show: function() {
     that = this;
-    filtered_array = this.filter(this.categories);
-    $(filtered_array).each(function() {
+    filteredArray = this.filter(this.categories);
+    this.categories = filteredArray;
+    $(filteredArray).each(function() {
       $('thead tr').append('<th>' + this + '</th>');
       $('tbody tr').append('<td>' + that.count(that, this) + '</td>');
     });
   },
   count: function(obj, category) {
     arr = [];
-    $(obj.categories).each(function() {
-      if (this == category.toString()) {
-        arr.push(this)
+    matches = [];
+    str = text.doc;
+    elements = this.doc.querySelectorAll("[category=" + category + "]")
+    for (var i = 0; i < elements.length; i++) {
+      arr.push(elements[i].textContent.replace(/(\r\n|\n|\r)/gm,"").trim());
+    }
+    filteredArray = this.filter(arr);
+    for (var i = 0; i < filteredArray.length; i++) {
+      pattern = filteredArray[i];
+      regex = new RegExp(pattern, 'gi');
+      if (str.match(regex)) {
+        matches.push(str.match(regex));
       }
-    })
-    return arr.length;
+    }
+    return matches.length;
   }
 }
