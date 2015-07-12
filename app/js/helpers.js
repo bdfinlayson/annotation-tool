@@ -42,10 +42,20 @@ function highlight() {
     var strings = rarefyXMLTextContent(xml.categories[category])
     for (string in strings) {
       var pattern = new RegExp(strings[string], 'g')
-      var newDoc = text.doc.replace(pattern, '<span class=' + xml.categories[category] + '>' + strings[string] + '</span>');
+      var newDoc = text.doc.replace(pattern, '<span class=' + xml.categories[category] + ' id=' + makeId(strings[string])  + '>' + strings[string] + '</span>');
       text.doc = newDoc;
     }
   }
+}
+
+function makeId(string) {
+  var id = string.replace(/(\s)/gm,"-");
+  return id;
+}
+
+function idToString(id) {
+  var string = id.replace(/(-)/gm," ");
+  return string;
 }
 
 function dynamicStyles(category) {
