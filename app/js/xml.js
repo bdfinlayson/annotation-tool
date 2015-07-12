@@ -33,6 +33,7 @@ var xml = {
   match: function(category) {
     arr = [];
     matches = [];
+    merged = [];
     str = text.doc;
     elements = this.doc.querySelectorAll("[category=" + category + "]")
     for (var i = 0; i < elements.length; i++) {
@@ -46,6 +47,7 @@ var xml = {
         matches.push(str.match(regex));
       }
     }
-    return matches;
+    merged = merged.concat.apply(merged, matches); // For unnesting nested arrays
+    return merged;
   }
 }

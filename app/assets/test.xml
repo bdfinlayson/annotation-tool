@@ -20,9 +20,9 @@
       <charseq END="311" START="307">the roses</charseq>
     </extent>
   </span>
-  <span category="PERSON">
+  <span category="THE-WORD-THE">
     <extent>
-      <charseq END="968" START="964">alice</charseq>
+      <charseq END="968" START="964">the</charseq>
     </extent>
   </span>
   <span category="PERSON">
