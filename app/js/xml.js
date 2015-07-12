@@ -1,10 +1,3 @@
-      // $(response).find('span').each(function() {
-      //   xml.doc = response;
-      //   xml.add(this.getAttribute('category'));
-
-      // xml.show()
-
-
 var xml = {
   categories: [],
   doc: '',
