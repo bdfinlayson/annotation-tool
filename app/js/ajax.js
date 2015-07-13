@@ -13,13 +13,14 @@ function makeUrl(object, pathId, doctype) {
   return url
 }
 
-
 function getDoc(object, path) {
   $.ajax({
     type: 'GET',
     url: path,
     dataType: object,
     error: function () {
+      $('table').remove();
+      $('body').append('<h3 class=alert>No annotations found</h3>');
       text.show();
     },
     success: function(response) {
