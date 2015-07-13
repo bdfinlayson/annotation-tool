@@ -42,7 +42,7 @@ function highlight() {
     var strings = rarefyXMLTextContent(xml.categories[category])
     for (string in strings) {
       var pattern = new RegExp(strings[string], 'g')
-      var newDoc = text.doc.replace(pattern, '<span class=' + xml.categories[category] + ' id=' + makeId(strings[string])  + '>' + strings[string] + '</span>');
+      var newDoc = text.doc.replace(pattern, '<span><span class=' + xml.categories[category] + ' id=' + makeId(strings[string])  + '>' + strings[string] + '</span><button>X</button></span>');
       text.doc = newDoc;
     }
   }

@@ -3,9 +3,12 @@
   getXML();
 })();
 
-$(document).on("click", "span", function(){
-  var currValue = parseInt($('#' + this.className).text() - 1)
-  $('#' + this.className).replaceWith( '<td id=' + this.className + '>' + currValue + '</td>');
-  ($('#' + this.className).text());
-  $(this).removeClass();
+$(document).on("click", "button", function(){
+  var parentEl = this.parentNode;
+  var button = parentEl.childNodes[1];
+  var childEl = parentEl.childNodes[0];
+  var currValue = parseInt($('#' + childEl.className).text() - 1)
+  $('#' + childEl.className).replaceWith( '<td id=' + childEl.className + '>' + currValue + '</td>');
+  $(childEl).removeClass();
+  $(button).remove();
 });
