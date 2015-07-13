@@ -68,7 +68,7 @@ function dynamicStyles(category) {
 
 function randomColor() {
   var rand = Math.random();
-  rand *= arr.length;
+  rand *= xml.categories.length;
   rand = Math.floor(rand);
   return text.colors[rand];
 }
