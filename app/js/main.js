@@ -11,3 +11,13 @@ $(document).on("click", "button", function(){
   $(childEl).removeClass();
   $(button).remove();
 });
+
+$(document).on("click", "a", function(){
+  var chapter = this.id;
+  $('.chapter').remove();
+  $('th').remove();
+  $('td').remove();
+  $('.alert').remove();
+  $('.content').remove();
+  get(chapter);
+});

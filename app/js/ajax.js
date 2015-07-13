@@ -19,7 +19,7 @@ function getDoc(object, path, chapter) {
     url: path,
     dataType: object,
     error: function () {
-      $('table').remove();
+      $('table').hide();
       $('body').append('<h3 class=chapter>' + text.chapters[chapter] + '</h3>');
       $('body').append('<h3 class=alert>No annotations found</h3>');
       text.show();
@@ -28,12 +28,12 @@ function getDoc(object, path, chapter) {
       if (object == 'text') {
         text.doc = response;
       } else {
+        $('table').show();
         $('table').before('<h3 class=chapter>' + text.chapters[chapter] + '</h3>');
         xml.doc = response;
         xml.add()
         xml.show()
         highlight();
-        // text.doc = response;
         text.show();
       }
     }
