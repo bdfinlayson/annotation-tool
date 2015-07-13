@@ -1,5 +1,5 @@
 (function() {
-  get('ch12');
+  get();
 })();
 
 $(document).on("click", "button", function(){

@@ -6,11 +6,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Annotation Tool</title>
     <link rel="stylesheet" href="app/assets/css/main.css">
+    <link rel="stylesheet" href="app/assets/css/navbar.css">
   </head>
   <body>
 
-    <div id='myid' class="container">
-      <h1>Annotation Tool</h1>
+    <div class='nav'>
+      <div id='title'>
+        <h1>Annotation Tool</h1>
+      </div>
+      <ul id="navbar">
+        <li><a href="#"
+               onmouseover="openMenu('chapters')"
+               onmouseout="closeMenuDelay()">Chapters</a>
+          <div id="chapters"
+               onmouseover="cancelCloseDelay()"
+               onmouseout="closeMenuDelay()">
+            <a id='ch01' href="#">Chapter 1</a>
+            <a id='ch02' href="#">Chapter 2</a>
+            <a id='ch03' href="#">Chapter 3</a>
+            <a id='ch04' href="#">Chapter 4</a>
+            <a id='ch05' href="#">Chapter 5</a>
+            <a id='ch06' href="#">Chapter 6</a>
+            <a id='ch07' href="#">Chapter 7</a>
+            <a id='ch08' href="#">Chapter 8</a>
+            <a id='ch09' href="#">Chapter 9</a>
+            <a id='ch10' href="#">Chapter 10</a>
+            <a id='ch11' href="#">Chapter 11</a>
+            <a id='ch12' href="#">Chapter 12</a>
+          </div>
+        </li>
+      </ul>
+      <div id='clear'></div>
     </div>
 
     <table>
@@ -27,6 +53,7 @@
     </table>
 
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="app/js/navbar.js"></script>
     <script src="app/js/ajax.js"></script>
     <script src="app/js/helpers.js"></script>
     <script src="app/js/xml.js"></script>
