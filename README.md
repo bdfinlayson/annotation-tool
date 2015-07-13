@@ -1,5 +1,5 @@
 # annotation-tool
-This app is a Javascript tool to display annotations of TXT documents using data parsed from XML files. Written using jQuery and vanilla Javascript.
+This app is a Javascript tool to display annotations of TXT documents using data parsed from XML files. It was written using jQuery and vanilla Javascript.
 
 ## Features
 - Running total of categories of annotations
