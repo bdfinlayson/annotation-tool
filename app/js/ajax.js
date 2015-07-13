@@ -1,7 +1,7 @@
 function getText() {
   $.ajax({
     type: 'GET',
-    url: 'app/assets/text/ch08.txt',
+    url: 'app/assets/text/ch12.txt',
     dataType: 'text',
     success: function(response) {
       text.doc = response;
@@ -13,7 +13,7 @@ function getText() {
 function getXML() {
   $.ajax({
     type: 'GET',
-    url: 'app/assets/xml/ch08.txt.xml',
+    url: 'app/assets/xml/ch12.txt.xml',
     dataType: 'xml',
     success: function(response) {
       xml.doc = response;

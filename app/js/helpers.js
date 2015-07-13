@@ -17,7 +17,7 @@ function rarefyXMLTextContent(pattern) {
   str = text.doc;
   elements = xml.doc.querySelectorAll("[category=" + pattern + "]")
   for (var i = 0; i < elements.length; i++) {
-    arr.push(elements[i].textContent.replace(/(\r\n|\n|\r)/gm,"").trim());
+    arr.push(elements[i].textContent.replace(/(\r\n|\n|\r|\.)/gm,"").trim());
   }
   filteredArray = filter(arr);
   return filteredArray
@@ -64,7 +64,6 @@ function dynamicStyles(category) {
   sheet.insertRule("." + category + " { background-color: " + color + "; }", 1);
   removeColor(color)
 }
-
 
 function randomColor() {
   var rand = Math.random();
