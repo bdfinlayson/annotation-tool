@@ -7,6 +7,7 @@ This app is a Javascript tool to display annotations of TXT documents using data
 - Mechanism to delete incorrect annotations
 - Switching between chapters
 - Dropdown menu
+- Dynamic stylesheet rule generation
 
 To demo, clone the repo and run `python -m SimpleHTTPServer` from the local directory.
 
