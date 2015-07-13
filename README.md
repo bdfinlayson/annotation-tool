@@ -8,7 +8,7 @@ This app is a Javascript tool to display annotations of TXT documents using data
 - Switching between chapters
 - Dropdown menu
 
-To demo, clone the repo and run 'python -m SimpleHTTPServer' from the local directory.
+To demo, clone the repo and run `python -m SimpleHTTPServer` from the local directory.
 
 Or [test-drive the live app on my website](http://http://bryanfinlayson.com/code/annotation-tool/index.html).
 
