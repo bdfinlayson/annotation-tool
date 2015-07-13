@@ -1,6 +1,5 @@
 (function() {
-  getText();
-  getXML();
+  get('ch10');
 })();
 
 $(document).on("click", "button", function(){
